@@ -1,13 +1,22 @@
 class Characters:
     """This creates the list of characters a player can choose from."""
     character_list= []
+    character_name= []
+    index_list= {}
     
     def __init__(self, name, color, status):
         self.name= name
         self.color= color
         self.status= status
         Characters.character_list.append(self)
+        Characters.character_name.append(self.name)
+        Characters.index_list[len(Characters.character_list)] = self.name
+        
+    
+    def character_pick(user_number):
+        return Characters.character_name[user_number - 1]
 
+        
         
 mrs_white= Characters("Mrs. White", "white", "suspect")
 mr_green= Characters("Mr. Green", "green", "suspect")
@@ -16,8 +25,13 @@ professor_plum= Characters("Professor Plum", "purple", "suspect")
 miss_scarlet= Characters("Miss Scarlet", "red", "suspect")
 colonel_mustard= Characters("Colonel Mustard", "yellow", "suspect")
 
+
+
 ##------------TESTING--------------
 # for character in Characters.character_list:
 #     print(f"Name: {character.name}, Color: {character.color}, Status: {character.status}")
 
-# print(Characters.character_list)
+# print(Characters.character_name)
+
+# user_pick= Characters.character_pick(3)
+# print(user_pick)

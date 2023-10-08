@@ -17,7 +17,7 @@ II. SETUP:
 3. Separate the cards into three piles: 
         a. suspects, 
         b. rooms
-        c. weapons
+        c. Rooms
 
 4. Place one card from each category into the case file envelope.
 
