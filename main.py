@@ -38,17 +38,17 @@ while game_play:
     # Card function to add cards to secret envelope
     card_function = CardFunction()
     cards_picked = card_function.add_envelope()       
-    print("Somebody killed Mr. Boddy. We need figure out who did it, where they did it and which item they used.")
+    print("\nOh no! Somebody killed Mr. Boddy. We need figure out who did it, where they did it and which item they used.\n")
     
     view_menu= True
     while view_menu:
         menu_pick= input("W: List of weapons, \nR: List of rooms, \nC: List of characters, \nE: Exit menu\n").lower()
         if menu_pick == "w":
-            print(Weapons.weapons_list)
+            print("\n".join(Weapons.weapons_list))
         elif menu_pick == "r":
-            print(Weapons.weapons_list)
+            print("\n".join(Weapons.weapons_list))
         elif menu_pick== "c":
-            print(Characters.character_name)
+            print("\n".join(Characters.character_name))
         elif menu_pick == "e":
             break
     
