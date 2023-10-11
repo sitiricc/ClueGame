@@ -8,12 +8,6 @@ from weapons import *
 
 game_play = True
 PLAYER_COUNT= 0
-user_1= 0
-user_2= 0
-user_3= 0
-user_4= 0
-user_5= 0
-user_6= 0
 user_picks= {}
 
 
@@ -24,7 +18,7 @@ while game_play:
     if user_answer > 6:
         print("Sorry, that's too many players.")
         game_play= False
-    if user_answer < 1:
+    if user_answer < 3:
         print("Sorry, you need at least one player.")
         game_play= False
         break
@@ -37,16 +31,35 @@ while game_play:
         user_pick = Characters.character_pick(character_number)
         player_dictionary[f"Player {turn_number}"]= user_pick
         turn_number += 1
-        print(f"You have picked {user_pick}. \n")    
+        print(f"You have picked {user_pick}. \n")   
+    print ("Thanks! Here's the list of players and their characters:") 
     print('\n'.join("{}: {}".format(k, v) for k, v in player_dictionary.items())) 
         
-
+    # Card function to add cards to secret envelope
     card_function = CardFunction()
     cards_picked = card_function.add_envelope()       
+    print("Somebody killed Mr. Boddy. We need figure out who did it, where they did it and which item they used.")
+    
+    view_menu= True
+    while view_menu:
+        menu_pick= input("W: List of weapons, \nR: List of rooms, \nC: List of characters, \nE: Exit menu\n").lower()
+        if menu_pick == "w":
+            print(Weapons.weapons_list)
+        elif menu_pick == "r":
+            print(Weapons.weapons_list)
+        elif menu_pick== "c":
+            print(Characters.character_name)
+        elif menu_pick == "e":
+            break
     
     
     # Create a shuffled deck
     shuffled_deck = CardFunction.shuffle_cards(deck)
+    
+    # Shuffle cards for each player
+    player_cards= {}
+    # for cards in shuffled_deck:
+        
     
 
 

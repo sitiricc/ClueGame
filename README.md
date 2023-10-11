@@ -15,9 +15,9 @@ II. SETUP:
 2. Doesn't matter whch room the weapon pieces start in.
 
 3. Separate the cards into three piles: 
-        a. suspects, 
-        b. rooms
-        c. Rooms
+        a. Suspects
+        b. Rooms
+        c. Weapons
 
 4. Place one card from each category into the case file envelope.
 
