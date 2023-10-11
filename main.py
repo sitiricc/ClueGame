@@ -29,28 +29,22 @@ while game_play:
         game_play= False
         break
     
-    for answer in range(PLAYER_COUNT):
+    player_dictionary= {}                       # Player number and character name dictionary
+    for turn_number in range(1, PLAYER_COUNT+1):
         """Asks each player for their character pick."""
-        PLAYER_COUNT -= 1
         print('\n'.join("{}: {}".format(k, v) for k, v in Characters.character_dict.items()))
-        character_number = int(input(f"Player 1: Which character did you want to play?\n"))
+        character_number = int(input(f"Player {turn_number}: Which character do you want to play?\n"))
         user_pick = Characters.character_pick(character_number)
-        print(f"You have picked {user_pick}.")
+        player_dictionary[f"Player {turn_number}"]= user_pick
+        turn_number += 1
+        print(f"You have picked {user_pick}. \n")    
+    print('\n'.join("{}: {}".format(k, v) for k, v in player_dictionary.items())) 
         
-    print("Thank you.")
+
     card_function = CardFunction()
     cards_picked = card_function.add_envelope()       
-        
-        
     
     
-    # """User character pick"""
-    # print('\n'.join("{}: {}".format(k, v) for k, v in Characters.character_dict.items()))
-    # character_number = int(input(f"Player 1: Which character did you want to play?\n"))
-    # user1 = Characters.character_pick(character_number)
-    # print(f"You have picked {user1}.")
-
-
     # Create a shuffled deck
     shuffled_deck = CardFunction.shuffle_cards(deck)
     
@@ -60,7 +54,7 @@ while game_play:
 
 
 
-    ## --------------TESTING----------------
+    # # --------------TESTING----------------
     # #Print shuffled deck
     # print('\n'.join("{}: {}".format(k, v) for k, v in cards_picked.items()))
     
@@ -71,3 +65,8 @@ while game_play:
 
     # # Set game_play to False to exit the loop (for testing purposes)
     # game_play = False
+    
+    # # Print player turn number with character name
+    # print('\n'.join("{}: {}".format(k, v) for k, v in player_dictionary.items()))
+        
+       
