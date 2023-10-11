@@ -1,3 +1,12 @@
+import random
+from characters import *
+from gameboard import *
+from dice_roll import *
+from rooms import *
+from weapons import *
+from prettytable import *
+from print_statements import *
+
 class Rooms:
     """This creates the list of characters a player can choose from."""
     rooms_list= []
